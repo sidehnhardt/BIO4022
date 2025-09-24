@@ -3,21 +3,3 @@ title: "Informe de investigación reproducible"
 output: html_document
 date: "2025-09-18"
 ---
-# Evaluation of stress tolerance of *Saccharomyces eubayanus* isolates
-
-## Introduction
-In 2011, Libkind, D., *et al*. identified *Saccharomyces eubayanus* as the ancestral parent strain of *Saccharomyces pastorianus*, the most used yeast in the beer industry to prepare Lager beer style. Since this discovery, several strains of this yeast have been isolated, primarily from the Patagonian regions of Chile and Argentina, including extreme environments in the far south of the country. Currently, two studies have characterized several *S. eubayanus* isolates in various culture media with stressors, primarily focusing on a limited number of growth conditions, which constrains our understanding of the natural diversity present within these isolates (Nespolo, R., *et al*., 2020; Mardones, W., *et al*., 2022). However, the advent of high-throughput phenotyping methodologies facilitates comprehensive phenotypic analysis under stress conditions, aiming to identify specific traits across different populations. This approach enables the identification of common characteristics among isolates and their correlation with shared genomic variants within the populations. In this work, 78 isolates from 10 distinct regions of Chilean Patagonia were cultivated under 22 stressful conditions categorized into groups: membrane, saline, osmotic, carbon sources, ionic, reactive oxygen species (ROS), antibiotics, and beer wort, among others. The resulting growth curves were analyzed through OmniBio platform (Dehnhardt-Amengual, S., *et al*., 2025) to calculate kinetic parameters, particularly µmax, to assess stress tolerance and compare all the isolates described earlier.
-
-## Methodology
-
-## Results
-After the µmax calculations by Omnibio platform, we calculate the average of each replicate and assembled an Excel sheet with each µmax per strain and culture media. This generated a table of results as the following here: 
-
-```{r, cache=T, echo=F, message=F}
-library(tidyverse)
-library(kableExtra)
-µmax <- read.csv("µmax_strains.csv", header = T, sep = ",")
-kable(µmax, digits = 2) %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F) %>% 
-  scroll_box(width = "900px", height = "200px")
-```
-
